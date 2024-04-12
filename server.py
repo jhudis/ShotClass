@@ -1,17 +1,21 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 
 # DATA
 
-# TODO
+usage_statistics = []
+current_user_stats = {}
 
 
 # PAGE ROUTES
 
 @app.route('/')
 def welcome():
+    current_user_stats.clear()
+    current_user_stats['score'] = 0
+    current_user_stats['max_score'] = 0
     return render_template('welcome.html')
 
 @app.route('/quiz/4')
@@ -38,10 +42,22 @@ def quiz5():
         next_button_text='Next'
     )
 
+@app.route('/congrats')
+def congrats():
+    usage_statistics.append(current_user_stats)
+    return render_template('congrats.html', score=current_user_stats['score'], max_score=current_user_stats['max_score'])
+
 
 # AJAX ROUTES
 
-# TODO
+@app.route('/record-usage', methods=['POST'])
+def record_usage():
+    statistic = request.get_json()
+    current_user_stats[statistic['name']] = statistic['value']
+    if 'points' in statistic and 'max_points' in statistic:
+        current_user_stats['score'] += statistic['points']
+        current_user_stats['max_score'] += statistic['max_points']
+    return []
 
 
 # MAIN

@@ -54,7 +54,9 @@ $(() => {
         $('#feedback').prop('hidden', false);
 
         const [g, o, i] = [guess, outerBounds, innerBounds];
-        if (is_between(g.x, g.y, o.x, o.y, i.x, i.y) && is_between(g.x + g.w, g.y + g.h, i.x + i.w, i.y + i.h, o.x + o.w, o.y + o.h)) {
+        const correct = is_between(g.x, g.y, o.x, o.y, i.x, i.y) && is_between(g.x + g.w, g.y + g.h, i.x + i.w, i.y + i.h, o.x + o.w, o.y + o.h)
+
+        if (correct) {
             $('#correctness').text('Correct!');
             $('#correctness').addClass('text-success');
         } else {
@@ -69,5 +71,17 @@ $(() => {
         ctx.closePath();
         ctx.clip('evenodd');
         ctx.fill();
+
+        $.ajax({
+            url: '/record-usage',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                'name': window.location.pathname + ' answer',
+                'value': JSON.stringify(guess),
+                'points': correct ? 1 : 0,
+                'max_points': 1
+            })
+        });
     });
 })
