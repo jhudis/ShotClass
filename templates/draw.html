@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<script>
+    const imageFilename = '{{ image_filename }}'
+    const outerBoundsNormalized = {{ outer_bounds_normalized|tojson }}
+    const innerBoundsNormalized = {{ inner_bounds_normalized|tojson }}
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename='draw.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="text-center m-4">
+    <h1>Frame Drawing</h1>
+    <p id="instructions">Click and drag on the image below to draw a box representing a <mark><b>{{ shot_type }}</b></mark>.</p>
+    <p id="feedback" hidden><span id="correctness"></span> {{ clarification }}</p>
+    <div id="canvas-wrapper" class="m-auto mb-3 w-75">
+        <canvas id="canvas"></canvas>
+    </div>
+    <button id="submit-button" class="btn btn-primary" disabled>Submit</button>
+    <a id="next-button" class="btn btn-primary" href="{{ next_page_route }}" hidden>{{ next_button_text }}</a>
+</div>
+{% endblock %}
