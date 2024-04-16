@@ -17,4 +17,7 @@
 
 #false-btn{
     background-color: red;
+}html {
+  display: table;
+  margin: auto;
 }
