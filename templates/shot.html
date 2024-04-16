@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div>
+
+</div>
+<div>
+ <h1>{{data.name}}</h1>
+ <img src="{{data.picture}}"  alt="{{data.name}}">
+ <h1>{{data.description}}</h1>
+ <a href="/shot/{{data.id}}">
+    <button class="editbutton">Next</button>
+ </a>
+</div>
+{% endblock %}
