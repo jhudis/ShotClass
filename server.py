@@ -12,43 +12,36 @@ database = [
     {
         "id": 1,
         "name": "Full Shot",
-        "picture": "",
         "description": "This is the widest shot we'll cover. It should contain the entire subject from head to toe.",
     },
     {
         "id": 2,
         "name": "Medium Full Shot (MFS)",
-        "picture": "",
         "description": "Each successive shot will come in tighter on the bottom. This one should stop at the knee.",
     },
     {
         "id": 3,
         "name": "Cowboy Shot (CS)",
-        "picture": "",
         "description": "This shot should stop in the middle of the thigh. It was named for its popularity in old westerns.",
     },
     {
         "id": 4,
         "name": "Medium Shot (MS)",
-        "picture": "",
         "description": "This shot should stop in the middle of the thigh. It was named for its popularity in old westerns.",
     },
     {
         "id": 5,
         "name": "Medium Close Up (MCU)",
-        "picture": "",
         "description": "This shot should stop just below the armpit. It's the go-to shot for scenes with dialogue.",
     },
     {
         "id": 6,
         "name": "Close Up (CU)",
-        "picture": "",
         "description": "This shot should contain most of the face. It is used to show emotion.",
     },
     {
         "id": 7,
         "name": "Extreme Close Up (ECU)",
-        "picture": "",
         "description": "This shot will contain only part of the face. It is used to highlight extreme emotion.",
     },
     
