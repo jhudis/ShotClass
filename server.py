@@ -53,21 +53,24 @@ quiz_questions = {
         "question": "What type of shot is this?",
         "picture": "",
         "options": ["Full Shot", "Medium Shot", "Cowboy Shot"],
-        "answer": "Full Shot"
+        "answer": "Full Shot",
+        "clarification": "Full shots must show the entire body of the subject."
     },
     "2":{
         "id": 2,
         "question": "What type of shot is this?",
         "picture": "",
         "options": ["Full Shot", "Medium Shot", "Cowboy Shot"],
-        "answer": ""
+        "answer": "Medium Shot",
+        "clarification": "Medium Shots must show the subject from the legs up."
     },
     "3":{
         "id": 3,
         "question": "What type of shot is this?",
         "picture": "",
         "options": ["Full Shot", "Medium Shot", "Cowboy Shot"],
-        "answer": ""
+        "answer": "Cowboy Shot",
+        "clarification": "Cowboy shots must show the subject from the waist up."
     },
 }
 
