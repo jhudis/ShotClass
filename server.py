@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, jsonify
 
 app = Flask(__name__)
 
 
 # DATA
 
+cur_qid = 1
 usage_statistics = []
 current_user_stats = {}
 
@@ -51,9 +52,32 @@ database = [
         "picture": "",
         "description": "This shot will contain only part of the face. It is used to highlight extreme emotion.",
     },
-    
-
 ]
+
+quiz_questions = {
+    "1":{
+        "id": 1,
+        "question": "What type of shot is this?",
+        "picture": "",
+        "options": ["Full Shot", "Medium Shot", "Cowboy Shot"],
+        "answer": "Full Shot"
+    },
+    "2":{
+        "id": 2,
+        "question": "What type of shot is this?",
+        "picture": "",
+        "options": ["Full Shot", "Medium Shot", "Cowboy Shot"],
+        "answer": ""
+    },
+    "3":{
+        "id": 3,
+        "question": "What type of shot is this?",
+        "picture": "",
+        "options": ["Full Shot", "Medium Shot", "Cowboy Shot"],
+        "answer": ""
+    },
+}
+
 # PAGE ROUTES
 
 @app.route('/')
@@ -62,6 +86,28 @@ def welcome():
     current_user_stats['score'] = 0
     current_user_stats['max_score'] = 0
     return render_template('welcome.html')
+
+@app.route('/quiz/home')
+def quiz_home():
+    global cur_qid 
+    cur_qid = 1
+    print(cur_qid)
+    return render_template('quiz_home.html', data={"id": 1})
+
+@app.route('/quiz/1')
+def quiz1():
+    cur_question = quiz_questions["1"]
+    return render_template('quiz_questions.html', data={"id": 1, "question": cur_question})
+
+@app.route('/quiz/2')
+def quiz2():
+    cur_question = quiz_questions["2"]
+    return render_template('quiz_questions.html', data={"id": 2, "question": cur_question})
+
+@app.route('/quiz/3')
+def quiz3():
+    cur_question = quiz_questions["3"]
+    return render_template('quiz_questions.html', data={"id": 3, "question": cur_question})
 
 @app.route('/quiz/4')
 def quiz4():
@@ -111,6 +157,28 @@ def view_shot(id):
         return render_template('shot.html', data=database[int(id)])
     
     return redirect("/quiz/{}".format("4"))
+
+# AJAX FUNCTION
+@app.route('/quiz/change_score', methods=['GET', 'POST'])
+def change_score():
+    # boolean to see if given answer is correct or not
+    ans_true = False
+
+    json_data = request.get_json()   
+    q_id = json_data["id"]
+    given_ans_id = json_data["answer_id"]
+
+    question = quiz_questions[str(q_id)]
+    print(question)
+    user_answer = question["options"][int(given_ans_id)]
+
+    if user_answer == question["answer"]:
+        ans_true = True
+        current_user_stats['score'] += 1
+
+    current_user_stats['max_score'] += 1
+
+    return jsonify(data = {"ans_true": ans_true, "ans_id": given_ans_id})
 
 # MAIN
 

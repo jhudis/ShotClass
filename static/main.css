@@ -1,1 +1,20 @@
+#home-title {
+    font-size: 25px;
+}
 
+#navbarNavAltMarkup {
+    font-size: 20px;
+}
+
+#shot0 {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#true-btn{
+    background-color: green;
+}
+
+#false-btn{
+    background-color: red;
+}
