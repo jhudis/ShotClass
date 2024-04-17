@@ -33,11 +33,11 @@ function display_ans(ans_true, ans_id, details){
             <div class="row">
                 <div>${details.question}</div>
             </div><br>
-            <div class="row>
-                <div>${details.picture}</div>
+            <div class="row">
+                <img src='${details.picture}'></div>
             </div><br>
             <div class="row">
-                <div>${answer_ops}</div><br>
+                ${answer_ops}<br>
             </div>
             `
         
@@ -82,8 +82,8 @@ $(document).ready(function(){
         <div class="row">
             <div>${details.question}</div>
         </div><br>
-        <div class="row>
-            <div>${details.picture}</div>
+        <div class="row">
+            <img src='${details.picture}'>
         </div><br>
         <div class="row">
             <div>${answer_ops}</div><br>
