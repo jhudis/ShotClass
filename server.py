@@ -51,7 +51,7 @@ quiz_questions = {
     "1":{
         "id": 1,
         "question": "What type of shot is this?",
-        "picture": "",
+        "picture": "https://s.studiobinder.com/wp-content/uploads/2020/12/The-Godfather-Part-II-Full-Shot-example.jpg",
         "options": ["Full Shot", "Medium Shot", "Cowboy Shot"],
         "answer": "Full Shot",
         "clarification": "Full shots must show the entire body of the subject."
@@ -59,18 +59,18 @@ quiz_questions = {
     "2":{
         "id": 2,
         "question": "What type of shot is this?",
-        "picture": "",
+        "picture": "https://d26oc3sg82pgk3.cloudfront.net/files/media/edit/image/52331/article_full%403x.jpg",
         "options": ["Full Shot", "Medium Shot", "Cowboy Shot"],
         "answer": "Medium Shot",
-        "clarification": "Medium Shots must show the subject from the legs up."
+        "clarification": "Medium Shots must show the subject from the waist and up."
     },
     "3":{
         "id": 3,
         "question": "What type of shot is this?",
-        "picture": "",
+        "picture": "https://s.studiobinder.com/wp-content/uploads/2019/04/Types-of-Shots-Cowboy-Shot-Pulp-Fiction-Samuel-L-Jackson.jpeg",
         "options": ["Full Shot", "Medium Shot", "Cowboy Shot"],
         "answer": "Cowboy Shot",
-        "clarification": "Cowboy shots must show the subject from the waist up."
+        "clarification": "Cowboy shots must show the subject from the upper legs and up."
     },
 }
 
@@ -85,9 +85,9 @@ def welcome():
 
 @app.route('/quiz/home')
 def quiz_home():
-    global cur_qid 
-    cur_qid = 1
-    print(cur_qid)
+    current_user_stats.clear()
+    current_user_stats['score'] = 0
+    current_user_stats['max_score'] = 0
     return render_template('quiz_home.html', data={"id": 1})
 
 @app.route('/quiz/1')
@@ -152,7 +152,7 @@ def view_shot(id):
     if int(id) != 6:
         return render_template('shot.html', data=database[int(id)])
     
-    return redirect("/quiz/{}".format("4"))
+    return redirect("/quiz/home")
 
 # AJAX FUNCTION
 @app.route('/quiz/change_score', methods=['GET', 'POST'])
