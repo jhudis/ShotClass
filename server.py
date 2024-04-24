@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, jsonify
 
 app = Flask(__name__)
 
 
 # DATA
 
+cur_qid = 1
 usage_statistics = []
 current_user_stats = {}
 
@@ -44,9 +45,35 @@ database = [
         "name": "Extreme Close Up (ECU)",
         "description": "This shot will contain only part of the face. It is used to highlight extreme emotion.",
     },
-    
-
 ]
+
+quiz_questions = {
+    "1":{
+        "id": 1,
+        "question": "What type of shot is this?",
+        "picture": "https://s.studiobinder.com/wp-content/uploads/2020/12/The-Godfather-Part-II-Full-Shot-example.jpg",
+        "options": ["Full Shot", "Medium Shot", "Cowboy Shot"],
+        "answer": "Full Shot",
+        "clarification": "Full shots must show the entire body of the subject."
+    },
+    "2":{
+        "id": 2,
+        "question": "What type of shot is this?",
+        "picture": "https://d26oc3sg82pgk3.cloudfront.net/files/media/edit/image/52331/article_full%403x.jpg",
+        "options": ["Full Shot", "Medium Shot", "Cowboy Shot"],
+        "answer": "Medium Shot",
+        "clarification": "Medium Shots must show the subject from the waist and up."
+    },
+    "3":{
+        "id": 3,
+        "question": "What type of shot is this?",
+        "picture": "https://s.studiobinder.com/wp-content/uploads/2019/04/Types-of-Shots-Cowboy-Shot-Pulp-Fiction-Samuel-L-Jackson.jpeg",
+        "options": ["Full Shot", "Medium Shot", "Cowboy Shot"],
+        "answer": "Cowboy Shot",
+        "clarification": "Cowboy shots must show the subject from the upper legs and up."
+    },
+}
+
 # PAGE ROUTES
 
 @app.route('/')
@@ -55,6 +82,28 @@ def welcome():
     current_user_stats['score'] = 0
     current_user_stats['max_score'] = 0
     return render_template('welcome.html')
+
+@app.route('/quiz/home')
+def quiz_home():
+    current_user_stats.clear()
+    current_user_stats['score'] = 0
+    current_user_stats['max_score'] = 0
+    return render_template('quiz_home.html', data={"id": 1})
+
+@app.route('/quiz/1')
+def quiz1():
+    cur_question = quiz_questions["1"]
+    return render_template('quiz_questions.html', data={"id": 1, "question": cur_question})
+
+@app.route('/quiz/2')
+def quiz2():
+    cur_question = quiz_questions["2"]
+    return render_template('quiz_questions.html', data={"id": 2, "question": cur_question})
+
+@app.route('/quiz/3')
+def quiz3():
+    cur_question = quiz_questions["3"]
+    return render_template('quiz_questions.html', data={"id": 3, "question": cur_question})
 
 @app.route('/quiz/4')
 def quiz4():
@@ -103,7 +152,29 @@ def view_shot(id):
     if int(id) != 6:
         return render_template('shot.html', data=database[int(id)])
     
-    return redirect("/quiz/{}".format("4"))
+    return redirect("/quiz/home")
+
+# AJAX FUNCTION
+@app.route('/quiz/change_score', methods=['GET', 'POST'])
+def change_score():
+    # boolean to see if given answer is correct or not
+    ans_true = False
+
+    json_data = request.get_json()   
+    q_id = json_data["id"]
+    given_ans_id = json_data["answer_id"]
+
+    question = quiz_questions[str(q_id)]
+    print(question)
+    user_answer = question["options"][int(given_ans_id)]
+
+    if user_answer == question["answer"]:
+        ans_true = True
+        current_user_stats['score'] += 1
+
+    current_user_stats['max_score'] += 1
+
+    return jsonify(data = {"ans_true": ans_true, "ans_id": given_ans_id})
 
 # MAIN
 
