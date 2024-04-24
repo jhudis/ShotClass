@@ -3,7 +3,7 @@ html {
   margin: auto;
 }
 
-body {
+.body-home {
   background-image: url("home.png");
   background-repeat:no-repeat;
     background-attachment:fixed;
