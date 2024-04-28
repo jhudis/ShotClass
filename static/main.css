@@ -17,6 +17,22 @@ html {
     position: absolute;
 }
 
+#home-title {
+    font-family: "Limelight";
+    color: #484848;
+    font-size: 35px;
+}
+
+#learn-nav {
+    font-family: "Limelight";
+    color: #484848;
+}
+
+#quiz-nav {
+    font-family: "Limelight";
+    color: #484848;
+}
+
 .limelight-regular {
     font-family: "Limelight", sans-serif;
     font-weight: 400;
@@ -24,24 +40,43 @@ html {
 }
 
 h1 {
-    font-size: 130px;
+    font-size: 125px;
     color: rgb(178, 55, 30);
     margin-bottom: 0;
 }
 
 .start {
-top: 93%;
-left: 38%;
-display: block;
-position: absolute;
+    top: 93%;
+    left: 38%;
+    display: block;
+    position: absolute;
 }
 
 a {
-text-decoration: none;
+    text-decoration: none;
 }
 
 a:hover {
     text-decoration: none;
+}
+
+#quizhome-shot {
+    font-family: "Limelight";
+    color: #484848;
+    font-size: 18px;
+    text-align: center;
+}
+
+#overview-title {
+    font-family: "Limelight";
+    color: rgb(178, 55, 30);
+    font-size: 25px;
+    text-align: center;
+}
+
+#quiz-btn {
+    background-color: rgb(178, 55, 30);
+    color: white;
 }
 
 
