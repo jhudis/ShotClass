@@ -1,3 +1,11 @@
+#background {
+    background-color: #f3f3f3ff;
+}
+
+#shotclass-nav {
+    background-color: #1f0200ff;
+}
+
 html {
     display: table;
     margin: auto;
@@ -19,18 +27,24 @@ html {
 
 #home-title {
     font-family: "Limelight";
-    color: #484848;
+    color: white;
     font-size: 35px;
 }
 
 #learn-nav {
     font-family: "Limelight";
-    color: #484848;
+    color: white;
 }
 
 #quiz-nav {
     font-family: "Limelight";
-    color: #484848;
+    color: white;
+}
+
+#shot0 {
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .limelight-regular {
@@ -72,6 +86,12 @@ a:hover {
     color: rgb(178, 55, 30);
     font-size: 25px;
     text-align: center;
+}
+
+#overview-desc {
+    font-family: "Limelight";
+    text-align: center;
+    color: #484848;
 }
 
 #quiz-btn {
