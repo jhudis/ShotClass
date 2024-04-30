@@ -235,3 +235,7 @@ transform: translate(0, 5%);
 .highlight {
     background-color: yellow;
 }
+
+.ruby {
+    background-color: rgb(178, 55, 30);
+}
