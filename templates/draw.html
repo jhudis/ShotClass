@@ -12,9 +12,9 @@
 {% block content %}
 <div class="text-center m-4">
     <h1>Frame Drawing</h1>
-    <p id="instructions">Click and drag on the image below to draw a box representing a <mark><b>{{ shot_type }}</b></mark>.</p>
+    <p id="instructions">Click and drag on the image below to draw a box representing a <span class="highlight"><b>{{ shot_type }}</b></span>.</p>
     <p id="feedback" hidden><span id="correctness"></span> {{ clarification }}</p>
-    <div id="canvas-wrapper" class="m-auto mb-3 w-75">
+    <div id="canvas-wrapper" class="mx-auto mb-2 w-75">
         <canvas id="canvas"></canvas>
     </div>
     <button id="submit-button" class="btn btn-primary" disabled>Submit</button>

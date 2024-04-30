@@ -231,3 +231,7 @@ transform: translate(0, 5%);
 #false-btn{
     background-color: red;
 }
+
+.highlight {
+    background-color: yellow;
+}
