@@ -69,25 +69,15 @@ function change_user_stats(question_id, options_id){
 }
 
 $(document).ready(function(){
-    $('#qstn-title').html(`<div class="row"><b>Question ${id}</div>`)
-
-    var answer_ops = ``
-    for(let i = 0; i < details.options.length; i++){
-        let option = details.options[i]
-        html_ops = `<button class="btn btn-primary" id="option-btn" data-id='"${i}"'>${option}</button>`
-        answer_ops += html_ops
-    }
+    $('#qstn-title').html(`<div id='qstn-title' class="row"><b>Question ${id}</div>`)
 
     var html_elem = `
         <div class="row">
-            <div>${details.question}</div>
+            <div id='qstn-qstn'>${details.question}</div>
         </div><br>
         <div class="row">
             <img src='${details.picture}'>
         </div><br>
-        <div class="row">
-            <div>${answer_ops}</div><br>
-        </div>
         `
     
     $('#question').html(html_elem)

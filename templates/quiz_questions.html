@@ -9,19 +9,48 @@
     console.log(id)
     console.log(details)
 </script>
+<body><br>
   <div id="qstn-title"></div>
   <br>
-  <div class="container">
-    <div class="row">
-        <div id="question"></div>
-    </div>
-    <div class="row">
-        <div id="clarification"></div>
-    </div>
-    <div class="row">
-        <div id="quiz-btn-back"></div>
-        <div id="quiz-btn-forward"></div>
-    </div>
+  <div class="row">
+    <div id="question"></div>
   </div>
-</div>
+  <div class="row" id="ans-buttons">
+    <div class="col-3">
+      <button id='ans-fs' class="btn">Full Shot</button>
+    </div>
+    <div class="col-5">
+      <button id='ans-mfs' class="btn">Medium Full Shot</button>
+    </div>
+    <div class="col-4">
+      <button id='ans-cs' class="btn">Cowboy Shot</button>
+    </div>
+  </div><br>
+  <div class="row" id="ans-buttons">
+    <div class="col-4">
+      <button id='ans-ms' class="btn">Medium Shot</button>
+    </div>
+    <div class="col-4">
+      <button id='ans-mcu' class="btn">Medium Close Up</button>
+    </div>
+    <div class="col-4">
+      <button id='ans-cu' class="btn">Close Up</button>
+    </div>
+  </div><br>
+  <div class="row" id="ans-buttons">
+    <div class="col-4">
+      <button id='ans-ecu' class="btn">Extreme Close Up</button>
+    </div>
+  </div><br>
+  <div class="row">
+      <div id="clarification"></div>
+  </div>
+  <div class="row">
+      <div id="quiz-btn-back"></div>
+      <div class="col-3 offset-10">
+        <div class="btn" id="quiz-btn-forward"></div>
+      </div>
+  </div>
+</body>
+  
 {% endblock %}

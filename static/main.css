@@ -99,6 +99,37 @@ a:hover {
     color: white;
 }
 
+#qstn-title {
+    font-family: "Limelight";
+    text-align: center;
+    color: rgb(178, 55, 30);
+    font-size: 25px;
+}
+
+#qstn-qstn {
+    font-family: "Limelight";
+    text-align: center;
+    color: #484848;
+    font-size: 20px;
+}
+
+#ans-buttons {
+    font-family: "Limelight";
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    padding-left: 0px;
+}
+
+#ans-ecu {
+    justify-self: center;
+}
+
+.btn {
+    background-color: rgb(178, 55, 30);
+    color: white;
+}
+
 
 /* CSS for fancy button */
 .button-86 {

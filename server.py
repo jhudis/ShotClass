@@ -52,7 +52,6 @@ quiz_questions = {
         "id": 1,
         "question": "What type of shot is this?",
         "picture": "https://s.studiobinder.com/wp-content/uploads/2020/12/The-Godfather-Part-II-Full-Shot-example.jpg",
-        "options": ["Full Shot", "Medium Shot", "Cowboy Shot"],
         "answer": "Full Shot",
         "clarification": "Full shots must show the entire body of the subject."
     },
@@ -60,7 +59,6 @@ quiz_questions = {
         "id": 2,
         "question": "What type of shot is this?",
         "picture": "https://d26oc3sg82pgk3.cloudfront.net/files/media/edit/image/52331/article_full%403x.jpg",
-        "options": ["Full Shot", "Medium Shot", "Cowboy Shot"],
         "answer": "Medium Shot",
         "clarification": "Medium Shots must show the subject from the waist and up."
     },
@@ -68,7 +66,6 @@ quiz_questions = {
         "id": 3,
         "question": "What type of shot is this?",
         "picture": "https://s.studiobinder.com/wp-content/uploads/2019/04/Types-of-Shots-Cowboy-Shot-Pulp-Fiction-Samuel-L-Jackson.jpeg",
-        "options": ["Full Shot", "Medium Shot", "Cowboy Shot"],
         "answer": "Cowboy Shot",
         "clarification": "Cowboy shots must show the subject from the upper legs and up."
     },
@@ -93,6 +90,7 @@ def quiz_home():
 @app.route('/quiz/1')
 def quiz1():
     cur_question = quiz_questions["1"]
+    print(cur_question)
     return render_template('quiz_questions.html', data={"id": 1, "question": cur_question})
 
 @app.route('/quiz/2')
