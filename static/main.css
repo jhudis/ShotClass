@@ -9,6 +9,7 @@
 html {
     display: table;
     margin: auto;
+    width: 100%;
 }
 
 .body-home {
