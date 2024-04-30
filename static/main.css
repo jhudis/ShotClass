@@ -128,8 +128,21 @@ a:hover {
 }
 
 .btn {
-    background-color: rgb(178, 55, 30);
-    color: white;
+    background-color: rgb(178, 55, 30) !important;
+    border-color: rgba(178, 55, 30, 0.5) !important;
+}
+
+.btn:hover {
+    background-color: rgb(150, 40, 20) !important;
+}
+
+.btn:disabled {
+    background-color: rgba(178, 55, 30, 0.5) !important;
+}
+
+.btn:focus,
+.btn:active {
+    box-shadow: 0 0 0 4px rgba(178, 55, 30, 0.5) !important;
 }
 
 
