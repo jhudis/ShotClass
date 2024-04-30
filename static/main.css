@@ -147,6 +147,21 @@ a:hover {
     background-color: rgb(178, 55, 30);
     color: white;
     font-family: "Limelight";
+    background-color: rgb(178, 55, 30) !important;
+    border-color: rgba(178, 55, 30, 0.5) !important;
+}
+
+.btn:hover {
+    background-color: rgb(150, 40, 20) !important;
+}
+
+.btn:disabled {
+    background-color: rgba(178, 55, 30, 0.5) !important;
+}
+
+.btn:focus,
+.btn:active {
+    box-shadow: 0 0 0 4px rgba(178, 55, 30, 0.5) !important;
 }
 
 
@@ -234,4 +249,12 @@ transform: translate(0, 5%);
 
 #false-btn{
     background-color: red;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.ruby {
+    background-color: rgb(178, 55, 30);
 }

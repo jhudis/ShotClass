@@ -36,6 +36,8 @@ $(() => {
         ctx.drawImage(image, 0, 0, width, height);
         guess.h = e.pageY - $(this).offset().top - guess.y;
         guess.w = guess.h / 9 * 16;
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = 'yellow';
         ctx.strokeRect(...rect_to_array(guess));
     });
 
