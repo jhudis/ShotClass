@@ -53,21 +53,21 @@ quiz_questions = {
         "question": "What type of shot is this?",
         "picture": "https://s.studiobinder.com/wp-content/uploads/2020/12/The-Godfather-Part-II-Full-Shot-example.jpg",
         "answer": "Full Shot",
-        "clarification": "Full shots must show the entire body of the subject."
+        "clarification": "This is a full shot. The subject is shown with his entire body, from head to toe."
     },
     "2":{
         "id": 2,
         "question": "What type of shot is this?",
         "picture": "https://d26oc3sg82pgk3.cloudfront.net/files/media/edit/image/52331/article_full%403x.jpg",
         "answer": "Medium Shot",
-        "clarification": "Medium Shots must show the subject from the waist and up."
+        "clarification": "This is a medium shot. The subject is framed must from the waist and up."
     },
     "3":{
         "id": 3,
         "question": "What type of shot is this?",
         "picture": "https://s.studiobinder.com/wp-content/uploads/2019/04/Types-of-Shots-Cowboy-Shot-Pulp-Fiction-Samuel-L-Jackson.jpeg",
         "answer": "Cowboy Shot",
-        "clarification": "Cowboy shots must show the subject from the upper legs and up."
+        "clarification": "This is a cowboy shot. They show the subject from the upper legs and up."
     },
 }
 
@@ -158,13 +158,11 @@ def change_score():
     # boolean to see if given answer is correct or not
     ans_true = False
 
-    json_data = request.get_json()   
-    q_id = json_data["id"]
-    given_ans_id = json_data["answer_id"]
+    json_data = request.get_json() 
+    q_id = json_data['id'] 
+    user_answer = json_data["answer"]
 
     question = quiz_questions[str(q_id)]
-    print(question)
-    user_answer = question["options"][int(given_ans_id)]
 
     if user_answer == question["answer"]:
         ans_true = True
@@ -172,7 +170,7 @@ def change_score():
 
     current_user_stats['max_score'] += 1
 
-    return jsonify(data = {"ans_true": ans_true, "ans_id": given_ans_id})
+    return jsonify(data = {"ans_true": ans_true, "ans": user_answer})
 
 # MAIN
 
