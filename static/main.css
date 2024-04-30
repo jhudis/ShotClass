@@ -1,5 +1,5 @@
 #background {
-    background-color: #f3f3f3ff;
+    background-color: lightgray;
 }
 
 #shotclass-nav {
@@ -55,7 +55,15 @@ html {
 }
 
 h1 {
-    font-size: 80px;
+    font-size: 125px;
+    line-height: 120px;
+    color: rgb(178, 55, 30);
+    margin-bottom: 0;
+    padding-top: 30px;
+}
+
+h2 {
+    font-size: 75px;
     line-height: 120px;
     color: rgb(178, 55, 30);
     margin-bottom: 0;
@@ -162,6 +170,20 @@ a:hover {
 .btn:focus,
 .btn:active {
     box-shadow: 0 0 0 4px rgba(178, 55, 30, 0.5) !important;
+}
+
+#parent {
+    display: flex;
+}
+
+#child1 {
+    width: 50%;
+}
+
+#child2 {
+    width: 50%; 
+    padding-left: 275px;
+    padding-top: 150px;
 }
 
 

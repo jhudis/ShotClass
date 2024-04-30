@@ -147,7 +147,10 @@ def record_usage():
 
 @app.route('/shot/<id>')
 def view_shot(id):
-    if int(id) != 6:
+    if int(id) < 0:
+        return redirect("/")
+
+    if int(id) <= 6:
         return render_template('shot.html', data=database[int(id)])
     
     return redirect("/quiz/home")

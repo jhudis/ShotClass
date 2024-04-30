@@ -2,9 +2,22 @@
 
 {% block content %}
 <div class="content">
- <h1>{{data.name}}</h1> <br>
- <img src="{{ url_for('static', filename='shot'+ data.id|string +'.png')}}" alt="data.name" width="1000px"> <br>
- <h3>{{data.description}}</h3> <br>
+ <h2>{{data.name}}</h2> <br>
+
+ <div id="parent">
+   <div id="child1"><img src="{{ url_for('static', filename='shot'+ data.id|string +'.png')}}" alt="data.name" width="800px"> <br></div>
+   <div id="child2"> <h3>{{data.description}}</h3> </div>
+ </div>
+ 
+
+ <br>
+ <br>
+ <br>
+ <br>
+
+ <a href="/shot/{{data.id - 2}}">
+   <button class="btn btn-primary">Prev</button>
+ </a>
  <a href="/shot/{{data.id}}">
     <button class="btn btn-primary">Next</button>
  </a>
