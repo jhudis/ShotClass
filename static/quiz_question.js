@@ -1,4 +1,4 @@
-function display_ans(ans_true, ans, details, button){
+function display_ans(ans_true, details, button){
     if(ans_true == false){
         $(button).css('background-color', 'red')
 
@@ -7,19 +7,6 @@ function display_ans(ans_true, ans, details, button){
     else{
         $(button).css('background-color', 'green');
     }
-    var html_elem = `
-            <div class="row">
-                <div>${details.question}</div>
-            </div><br>
-            <div class="row">
-                <img src='${details.picture}'></div>
-            </div><br>
-            <div class="row">
-                ${answer_ops}<br>
-            </div>
-            `
-        
-    $('#question').html(html_elem)
 }
 
 function change_user_stats(id, value, button){
@@ -35,7 +22,7 @@ function change_user_stats(id, value, button){
             ans_true = all_data["ans_true"]
             given_ans = all_data["ans"]
             console.log(ans_true)
-            display_ans(ans_true, given_ans, details, button)
+            display_ans(ans_true, details, button)
         },
         error: function(request, status, error){
             console.log("Error");

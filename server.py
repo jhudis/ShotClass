@@ -60,7 +60,7 @@ quiz_questions = {
         "question": "What type of shot is this?",
         "picture": "https://d26oc3sg82pgk3.cloudfront.net/files/media/edit/image/52331/article_full%403x.jpg",
         "answer": "Medium Shot",
-        "clarification": "This is a medium shot. The subject is framed must from the waist and up."
+        "clarification": "This is a medium shot. The subject is framed must from the waist and up and is useful for showing action"
     },
     "3":{
         "id": 3,
@@ -68,6 +68,20 @@ quiz_questions = {
         "picture": "https://s.studiobinder.com/wp-content/uploads/2019/04/Types-of-Shots-Cowboy-Shot-Pulp-Fiction-Samuel-L-Jackson.jpeg",
         "answer": "Cowboy Shot",
         "clarification": "This is a cowboy shot. They show the subject from the upper legs and up."
+    },
+    "4":{
+        "id": 4,
+        "question": "What type of shot is this?",
+        "picture": "https://d26oc3sg82pgk3.cloudfront.net/files/media/edit/image/55636/large_thumb%403x.jpg",
+        "answer": "Extreme Close Up",
+        "clarification": "This is an extreme close up. They show part of the subject's face and is used to highlight extreme emotion."
+    },
+    "5":{
+        "id": 5,
+        "question": "What type of shot is this?",
+        "picture": "https://s.studiobinder.com/wp-content/uploads/2020/12/Her-%E2%80%94-medium-long-shot-example.jpg.webp?resolution=1440,2",
+        "answer": "Medium Full Shot",
+        "clarification": "This is a medium full shot. They show the subject from the knee up."
     },
 }
 

@@ -85,21 +85,20 @@ a:hover {
 }
 
 #quizhome-shot {
-    font-family: "Limelight";
+    font-weight: bold;
     color: #484848;
     font-size: 18px;
     text-align: center;
 }
 
 #overview-title {
-    font-family: "Limelight";
+    font-weight: bold;
     color: rgb(178, 55, 30);
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
 }
 
 #overview-desc {
-    font-family: "Limelight";
     text-align: center;
     color: #484848;
 }
@@ -107,10 +106,6 @@ a:hover {
 #img-row{
     display: flex;
     justify-content: center;
-}
-
-#clarification {
-    font-family: "Limelight"
 }
 
 #quiz-btn {
@@ -125,21 +120,18 @@ a:hover {
 }
 
 #qstn-title {
-    font-family: "Limelight";
     text-align: center;
     color: rgb(178, 55, 30);
     font-size: 25px;
 }
 
 #qstn-qstn {
-    font-family: "Limelight";
     text-align: center;
     color: #484848;
     font-size: 20px;
 }
 
 #ans-buttons {
-    font-family: "Limelight";
     text-align: center;
     color: white;
     font-size: 15px;
@@ -155,21 +147,21 @@ a:hover {
     background-color: rgb(178, 55, 30);
     color: white;
     font-family: "Limelight";
-    background-color: rgb(178, 55, 30) !important;
-    border-color: rgba(178, 55, 30, 0.5) !important;
+    background-color: rgb(178, 55, 30);
+    border-color: rgba(178, 55, 30, 0.5);
 }
 
 .btn:hover {
-    background-color: rgb(150, 40, 20) !important;
+    background-color: rgb(150, 40, 20);
 }
 
 .btn:disabled {
-    background-color: rgba(178, 55, 30, 0.5) !important;
+    background-color: rgba(178, 55, 30, 0.5);
 }
 
 .btn:focus,
 .btn:active {
-    box-shadow: 0 0 0 4px rgba(178, 55, 30, 0.5) !important;
+    box-shadow: 0 0 0 4px rgba(178, 55, 30, 0.5);
 }
 
 #parent {
