@@ -55,7 +55,8 @@ html {
 }
 
 h1 {
-    font-size: 125px;
+    font-size: 80px;
+    line-height: 120px;
     color: rgb(178, 55, 30);
     margin-bottom: 0;
 }
