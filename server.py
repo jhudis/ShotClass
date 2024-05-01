@@ -28,7 +28,7 @@ database = [
     {
         "id": 4,
         "name": "Medium Shot (MS)",
-        "description": "This shot should stop in the middle of the thigh. It was named for its popularity in old westerns.",
+        "description": "This shot should stop at the waist. It is useful for showing action up close.",
     },
     {
         "id": 5,
