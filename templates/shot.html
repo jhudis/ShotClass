@@ -6,7 +6,7 @@
 
  <div id="parent">
    <div id="child1"><img src="{{ url_for('static', filename='shot'+ data.id|string +'.png')}}" alt="data.name" width="800px"> <br></div>
-   <div id="child2"> <h3>{{data.description}}</h3> </div>
+   <div id="child2"> <h3>{{data.description|safe}}</h3> </div>
  </div>
  
 

@@ -13,37 +13,37 @@ database = [
     {
         "id": 1,
         "name": "Full Shot",
-        "description": "This is the widest shot we'll cover. It should contain the entire subject from head to toe.",
+        "description": "This is the widest shot we'll cover. <br><br> It should contain the entire subject from <b>head to toe</b>.",
     },
     {
         "id": 2,
         "name": "Medium Full Shot (MFS)",
-        "description": "Each successive shot will come in tighter on the bottom. This one should stop at the knee.",
+        "description": "Each successive shot will come in tighter on the bottom. <br><br> This one should stop at the <b>knee</b>.",
     },
     {
         "id": 3,
         "name": "Cowboy Shot (CS)",
-        "description": "This shot should stop in the middle of the thigh. It was named for its popularity in old westerns.",
+        "description": "This shot should stop in the <b>middle of the thigh</b>. <br><br> It was named for its popularity in old westerns.",
     },
     {
         "id": 4,
         "name": "Medium Shot (MS)",
-        "description": "This shot should stop at the waist. It is useful for showing action up close.",
+        "description": "This shot should stop at the <b>waist</b>. <br><br> It is useful for showing action up close.",
     },
     {
         "id": 5,
         "name": "Medium Close Up (MCU)",
-        "description": "This shot should stop just below the armpit. It's the go-to shot for scenes with dialogue.",
+        "description": "This shot should stop just below the <b>armpit</b>. <br><br> It's the go-to shot for scenes with dialogue.",
     },
     {
         "id": 6,
         "name": "Close Up (CU)",
-        "description": "This shot should contain most of the face. It is used to show emotion.",
+        "description": "This shot should contain <b>most of the face</b>. <br><br> It is used to show emotion.",
     },
     {
         "id": 7,
         "name": "Extreme Close Up (ECU)",
-        "description": "This shot will contain only part of the face. It is used to highlight extreme emotion.",
+        "description": "This shot will contain <b>only part of the face<b>. <br><br> It is used to highlight <b>extreme<b> emotion.",
     },
 ]
 
