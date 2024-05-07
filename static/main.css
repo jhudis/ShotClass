@@ -131,16 +131,13 @@ a:hover {
     font-size: 20px;
 }
 
-#ans-buttons {
-    text-align: center;
-    color: white;
-    font-size: 15px;
-    padding-left: 0px;
-    width: 100%;
-}
-
 #ans-ecu {
     justify-self: center;
+}
+
+#quiz-options{
+    display: flex;
+    justify-content: space-between;
 }
 
 .btn {

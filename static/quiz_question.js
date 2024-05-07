@@ -2,10 +2,11 @@ function display_ans(ans_true, details, button){
     if(ans_true == false){
         $(button).css('background-color', 'red')
 
-        $('#clarification').html(`<span id='error-clarification'>${details.clarification}`)
+        $('#clarification').html(`<span id='error-clarification'>${details.clarification}</span>`)
     }
     else{
         $(button).css('background-color', 'green');
+        $('#clarification').html(`<span id='error-clarification'>Correct!</span>`)
     }
 }
 

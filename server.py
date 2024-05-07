@@ -119,18 +119,28 @@ def quiz3():
 
 @app.route('/quiz/4')
 def quiz4():
+    cur_question = quiz_questions["4"]
+    return render_template('quiz_questions.html', data={"id": 4, "question": cur_question})
+
+@app.route('/quiz/5')
+def quiz5():
+    cur_question = quiz_questions["5"]
+    return render_template('quiz_questions.html', data={"id": 5, "question": cur_question})
+
+@app.route('/quiz/6')
+def quiz6():
     return render_template('draw.html',
         shot_type='Medium Shot',
         clarification='The camera frame should end at the waist.',
         image_filename='american_gangster_FS.png',
         outer_bounds_normalized={'x': 0.14, 'y': 0.00, 'w': 0.75, 'h': 0.60},
         inner_bounds_normalized={'x': 0.38, 'y': 0.12, 'w': 0.30, 'h': 0.36},
-        next_page_route='/quiz/5',
+        next_page_route='/quiz/7',
         next_button_text='Next'
     )
 
-@app.route('/quiz/5')
-def quiz5():
+@app.route('/quiz/7')
+def quiz7():
     return render_template('draw.html',
         shot_type='Medium Close Up',
         clarification='The camera frame should end just below the armpit.',
