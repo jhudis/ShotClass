@@ -19,11 +19,12 @@ html {
     background-position:center;
 }
 
-.title {
-    top: 30%;
-    left: 37%;
+.description {
+    top: 2%;
+    left: 40%;
     display: block;
     position: absolute;
+    color: white;
 }
 
 #home-title {
@@ -179,7 +180,7 @@ a:hover {
 /* CSS for fancy button */
 .button-86 {
 all: unset;
-width: 275px;
+width: 375px;
 height: 30px;
 font-size: 50px;
 background: transparent;
